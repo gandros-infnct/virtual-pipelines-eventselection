@@ -11,13 +11,12 @@ jobs:
     container: rootproject/root-conda:${{ matrix.version }}
     continue-on-error: ${{ matrix.allow_feature }}
     strategy:
-    matrix:
       matrix:
         version: [6.18.04]
-	allow_failure: [false]
-	include:
-	  - version: latest
-	    allow_failure: true
+        allow_failure: [false]
+        include:
+          - version: latest
+            allow_failure: true
     steps:
       - name: checkout repository
         uses: actions/checkout@v2
